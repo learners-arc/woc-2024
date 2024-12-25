@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakil Ahmad</title>
+    <style>
+        /* Default Style */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Page Layout */
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+            padding: 20%;
+        }
+        /* Header */
+        header{
+            text-align: center;
+            padding: 2em 0;
+        }
+        h1{
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #444;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        p{
+            color: #666;
+        }
+        /* About Section */
+        .aboutus{
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .about-section img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1)
+        }
+        .about-section{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            margin: 2rem;
+        }
+        .about-content{
+            flex: 1;
+        }
+        .about-section h2{
+            color: #333;
+            font-size: 2rem;
+        }
+        /* skills */
+        .skill{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+        }
+        .skill-items{
+        }
+    </style>
+</head>
+<body>
+    <!-- header section -->
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Full Stack Developer | MERN Stack | PHP Laravel | IoT Enthusiast</p>
+    </header>
+    <!-- About Us Section -->
+    <div class="aboutus">
+        <section class="about-section">
+            <img src="shakil01.png" alt="Shakil Ahmad">
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>Hello! I'm Shakil Ahmad a passionate full stack developer skilled in MERN Stack, Laravel, and various other technologies. I enjoy solving real-world problems through code, and I have a strong interest in IoT and robotics projects.
+                </p>
+            </div>
+        </section>
+        </div>
+        <!-- Skill Section -->
+        <section class="skill">
+            <div class="skill-items">HTML</div>
+            <div class="skill-items">CSS</div>
+            <div class="skill-items">JavaScript</div>
+            <div class="skill-items">React.js</div>
+            <div class="skill-items">Typescript</div>
+            <div class="skill-items">Node.js</div>
+            <div class="skill-items">MongoDB</div>
+            <div class="skill-items">Postgres</div>
+            <div class="skill-items">Express</div>
+            <div class="skill-items">Prisma</div>
+            <div class="skill-items">PHP</div>
+            <div class="skill-items">Laravel</div>
+        </section>
+</body>
+</html>
