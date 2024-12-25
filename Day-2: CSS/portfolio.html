@@ -17,7 +17,11 @@
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.5;
-            padding: 20%;
+            padding: 20px;
+        }
+        .main{
+            max-width: 1000px;
+            margin: 0 auto;
         }
         /* Header */
         header{
@@ -34,21 +38,17 @@
             color: #666;
         }
         /* About Section */
-        .aboutus{
-            max-width: 1000px;
-            margin: 0 auto;
+        .about-section{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            margin: 2rem 0;
         }
         .about-section img{
             width: 150px;
             height: 150px;
             border-radius: 50%;
             box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1)
-        }
-        .about-section{
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            margin: 2rem;
         }
         .about-content{
             flex: 1;
@@ -61,8 +61,59 @@
         .skill{
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+            grid-gap: 1rem;
+            margin-top: 2rem;
         }
         .skill-items{
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .skill-items:hover{
+            transform: scale(1.05);
+        }
+        /* Project Section */
+        .projects{
+            margin-top: 2rem;
+        }
+        .project-item{
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .project-item:hover{
+            transform: scale(1.02);            
+        }
+        .project-item h3{
+            color: #444;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        footer{
+            text-align: center;
+            padding: 2em 0;
+            margin: 2rem;
+            color: #666;
+        }
+        /* buttons */
+        .btn{
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover{
+            background-color: #555;
         }
     </style>
 </head>
@@ -73,7 +124,7 @@
         <p>Full Stack Developer | MERN Stack | PHP Laravel | IoT Enthusiast</p>
     </header>
     <!-- About Us Section -->
-    <div class="aboutus">
+    <div class="main">
         <section class="about-section">
             <img src="shakil01.png" alt="Shakil Ahmad">
             <div class="about-content">
@@ -82,7 +133,6 @@
                 </p>
             </div>
         </section>
-        </div>
         <!-- Skill Section -->
         <section class="skill">
             <div class="skill-items">HTML</div>
@@ -98,5 +148,26 @@
             <div class="skill-items">PHP</div>
             <div class="skill-items">Laravel</div>
         </section>
+        <!-- Project Section -->
+        <section class="projects">
+            <h2>My Projects</h2>
+            <div class="project-item">
+                <h3>Project 1: E-Commerce App</h3>
+                <p>A full-featured e-commerce web app with React.js and Node.js.</p>
+                <a href="#" class="btn">View Project</a>
+            </div><br>
+            <div class="project-item">
+                <h3>Project 2: Medium Clone
+                </h3>
+                <p>A blog-style web application built with MERN Stack.
+                </p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+        </section>
+    </div>
+    <!-- footer section -->
+     <footer>
+        <p>&copy; 2024 Shakil Ahmad | Connect me on <a href="https://www.linkedin.com/in/learnershakil/">linkedin</a></p>
+     </footer>
 </body>
 </html>
