@@ -1,0 +1,106 @@
+/* Universal Reset: This rule removes default margin and padding from all elements,
+   and sets the box-sizing to border-box for all elements, so padding and borders 
+   are included in the element's total width and height. */
+   * {
+    margin: 0;         /* Removes default margin from all elements */
+    padding: 0;        /* Removes default padding from all elements */
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
+}
+
+/* Set the height and width of html and body elements to ensure they fill the entire viewport */
+html, body {
+    height: 100%; /* Ensures html and body elements take up the full height of the viewport */
+    width: 100%;  /* Ensures html and body elements take up the full width of the viewport */
+}
+
+/* Flex Container - flexbox layout to arrange elements horizontally */
+.flexContainer {
+    height: 300px;         /* Sets the height of the flex container to 300px */
+    width: 100%;           /* Ensures the flex container takes the full width of its parent */
+    background-color: #7bd5fb; /* Applies a light blue background color to the flex container */
+    
+    display: flex;         /* Enables flexbox layout on this container */
+    
+    /* Justify content horizontally inside the container */
+    justify-content: space-around; /* Distributes the child elements with equal space between them, 
+                                      placing them evenly with space around each element */
+    
+    /* Align items vertically inside the container */
+    align-items: center;  /* Vertically centers the child elements in the container */
+    
+    margin: 20px 0;        /* Adds 20px margin at the top and bottom of the container */
+}
+
+/* Styling for each div inside the flexContainer */
+.flexContainer div {
+    height: 100px;         /* Sets the height of each div inside the flex container to 100px */
+    width: 100px;          /* Sets the width of each div inside the flex container to 100px */
+    background-color: red; /* Sets the background color of each div to red */
+    
+    display: inline-block; /* Makes the divs behave like inline-block elements, 
+                               though flexbox will usually override this behavior */
+    
+    flex-shrink: 0;        /* Prevents the divs from shrinking if there is not enough space */
+}
+
+/* Absolute Positioning Example: The "first" class element is absolutely positioned */
+.first {
+    position: absolute;  /* Takes the element out of the normal document flow and positions it relative to the nearest positioned ancestor */
+    top: 10px;           /* Places the element 10px from the top of the positioned ancestor (or the viewport if none exists) */
+    z-index: 2;          /* Makes sure this element appears above other elements that have a lower or default z-index value */
+}
+
+/* Grid Layout Example: Setting up a grid container */
+.gridContainer {
+    display: grid;                     /* Establishes the element as a grid container */
+    grid-template-columns: repeat(3, 1fr);  /* Creates 3 equal-width columns */
+    grid-template-rows: auto;           /* Allows rows to adjust based on content */
+    gap: 20px;                          /* Sets a 20px gap between rows and columns */
+    margin: 20px 0;                     /* Adds margin around the grid container */
+    background-color: #f0f0f0;         /* Light gray background for grid container */
+}
+
+/* Grid Items Styling */
+.gridContainer div {
+    background-color: yellow;         /* Sets the background color of each grid item to yellow */
+    padding: 20px;                     /* Adds padding inside each grid item */
+    text-align: center;                /* Centers text horizontally within grid items */
+}
+
+/* Example of a Grid Item Spanning Multiple Columns */
+.gridContainer .item1 {
+    grid-column: span 2;               /* Makes the first item span across two columns */
+}
+
+/* Absolute Positioning Over Grid: Example where a header stays fixed over the grid */
+.header {
+    position: absolute;  /* Fixed position relative to the viewport or the nearest positioned ancestor */
+    top: 0;              /* Sticks to the top of the page */
+    left: 0;             /* Sticks to the left of the page */
+    right: 0;            /* Sticks to the right of the page */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white;        /* White text */
+    padding: 15px;       /* Adds padding inside the header */
+    text-align: center;  /* Centers text inside the header */
+    z-index: 10;         /* Ensures the header stays above other content */
+}
+
+/* Sticky Header: This header will stay at the top of its container when scrolling */
+.stickyHeader {
+    position: sticky;    /* Makes the header "stick" to the top of the container when scrolling */
+    top: 0;              /* Sticks to the top of the container */
+    background-color: #333; /* Dark background for the sticky header */
+    color: white;        /* White text */
+    padding: 10px;       /* Padding for the sticky header */
+    text-align: center;  /* Centers text inside the sticky header */
+    z-index: 5;          /* Keeps the sticky header above other content */
+}
+
+/* Example of a sticky element inside a grid */
+.stickyItem {
+    position: sticky;
+    top: 0;              /* The item will stay at the top of its container when scrolling */
+    background-color: #ffcc00; /* Yellow background */
+    padding: 15px;
+    text-align: center;
+}
