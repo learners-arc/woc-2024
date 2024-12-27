@@ -1,0 +1,24 @@
+{
+  "name": "postcss",
+  "version": "1.0.0",
+  "description": "postcss sikha rha hu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "shakil": "postcss style.css --dir dest",
+    "killer": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "postcss-cli": "^11.0.0",
+    "postcss-nested": "^7.0.2",
+    "postcss-preset-env": "^10.1.2"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.49",
+    "postcss-custom-properties": "^14.0.4"
+  }
+}
