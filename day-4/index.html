@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Project4</title>
+    <style>
+      @font-face {
+        font-family: "Made Soul Maze";
+        src: url("/made_soulmaze/MADE Soulmaze PERSONAL USE.otf")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      .heroHeading {
+        font-family: "Made Soul Maze", sans-serif;
+      }
+      .subMarquee img {
+        width: 3vw;
+      }
+
+      .marquee {
+        animation: marquee 12s infinite linear;
+        font-family: "Made Soul Maze", sans-serif;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translate(-50%);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="bg-[#0E231C] w-full text-white sm:block hidden">
+      <!-- NavBar -->
+      <nav
+        class="w-full flex justify-between items-center px-[7vw] py-5 border-b absolute top-0"
+      >
+        <img src="/assets/logo.svg" alt="" />
+        <div class="md:block hidden">
+          <ul class="flex items-center gap-[50px]">
+            <li class="opacity-50 hover:opacity-100 cursor-pointer">Home</li>
+            <li class="opacity-50 hover:opacity-100 cursor-pointer">About</li>
+            <li class="opacity-50 hover:opacity-100 cursor-pointer">
+              Community
+            </li>
+            <li
+              class="bg-white text-black px-[1vw] py-[0.5vw] rounded-sm cursor-pointer"
+            >
+              Join Us Now
+            </li>
+          </ul>
+        </div>
+
+        <div class="group md:hidden p-2">
+          <span class="bg-white cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="30"
+              viewBox="0,0,300,150"
+            >
+              <g
+                fill="#ffffff"
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-miterlimit="10"
+                stroke-dasharray=""
+                stroke-dashoffset="0"
+                font-family="none"
+                font-weight="none"
+                font-size="none"
+                text-anchor="none"
+                style="mix-blend-mode: normal"
+              >
+                <g transform="scale(5.12,5.12)">
+                  <path
+                    d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </span>
+
+          <div
+            class="absolute top-12 right-10 bg-black group-hover:block hidden p-8"
+          >
+            <ul class="flex flex-col gap-[10px]">
+              <li class="opacity-50 hover:opacity-100 cursor-pointer">Home</li>
+              <li class="opacity-50 hover:opacity-100 cursor-pointer">About</li>
+              <li class="opacity-50 hover:opacity-100 cursor-pointer">
+                Community
+              </li>
+              <li class="opacity-50 hover:opacity-100 cursor-pointer">
+                Join Us Now
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="w-full px-[4vw]">
+        <div class="w-full h-[52.4vw] border-x flex justify-between pt-[10vw]">
+          <!-- Text div -->
+          <div class="p-[3.4vw] flex flex-col gap-[3vw]">
+            <div class="flex flex-col gap-[2.7vw]">
+              <div class="text-[6.5vw] leading-none uppercase heroHeading">
+                <h1>Onchain</h1>
+                <h1 class="flex items-center gap-[1vw]">
+                  <div class="bg-[#67CB30] w-[8vw] h-[1vw] mt-[1vw]"></div>
+                  Summer
+                </h1>
+                <h1>Buildathon</h1>
+              </div>
+
+              <p class="w-[40vw] text-[1.2vw]">
+                Ready to make your mark? Apply now and get ready for an
+                unforgettable experience at OnHack Africa!
+              </p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex items-center gap-[1.5vw] text-[1.1vw]">
+              <div
+                class="flex gap-1 items-center bg-white text-black px-[1.5vw] py-[0.9vw] rounded-sm cursor-pointer"
+              >
+                <h1>Become a Builder</h1>
+                <img class="" src="/assets/ar.svg" alt="" />
+              </div>
+              <div class="opacity-40 hover:opacity-100 cursor-pointer">
+                Know more
+              </div>
+            </div>
+          </div>
+          <!-- image div -->
+          <div class="w-[31vw]">
+            <img class="w-full" src="/assets/Element.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Section -->
+      <div class="w-full overflow-hidden">
+        <div class="w-[200vw] marquee flex">
+          <div
+            class="w-[50%] bg-[#C568DE] py-4 flex justify-around text-[3vw] subMarquee"
+          >
+            <h1>CREATE</h1>
+            <img src="/assets/star.svg" alt="" />
+
+            <h1>EXPLORE</h1>
+            <img src="/assets/star.svg" alt="" />
+
+            <h1>NETWORK</h1>
+            <img src="/assets/star.svg" alt="" />
+
+            <h1>BUILD</h1>
+            <img src="/assets/star.svg" alt="" />
+
+            <h1>INNOVATE</h1>
+            <img src="/assets/star.svg" alt="" />
+          </div>
+
+          <div
+            class="w-[50%] bg-[#C568DE] py-4 flex justify-around text-[3vw] subMarquee"
+          >
+            <h1>CREATE</h1>
+            <img src="/assets/star.svg" alt="" />
+
+            <h1>EXPLORE</h1>
+            <img src="/assets/star.svg" alt="" />
+
+            <h1>NETWORK</h1>
+            <img src="/assets/star.svg" alt="" />
+
+            <h1>BUILD</h1>
+            <img src="/assets/star.svg" alt="" />
+
+            <h1>INNOVATE</h1>
+            <img src="/assets/star.svg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Participate section -->
+      <div
+        class="bg-[#C568DE] p-[5.5vw] mt-[7.5vw] flex flex-col gap-[4.1vw] justify-center items-center"
+      >
+        <!-- header -->
+        <div class="flex justify-between items-end w-full">
+          <h1 class="text-[3.3vw] w-[4vw] leading-none font-MadeSoulMaze">
+            Why Participate?
+          </h1>
+
+          <button
+            class="bg-white text-black text-[1.3vw] px-[1.5vw] py-[0.6vw] rounded-sm"
+          >
+            Participate Now
+          </button>
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-3 gap-[1vw] h-[35.3vw] w-full">
+          <!-- Left Column -->
+          <div
+            class="bg-[#0E231C] p-[2.7vw] h-full flex flex-col justify-between"
+          >
+            <img class="w-[21vw]" src="assets/cash.png" alt="" />
+
+            <div class="w-[15vw] text-[1.2vw] flex flex-col gap-[1vw]">
+              <h1 class="font-MadeSoulMaze">BOUNTIES</h1>
+              <p class="opacity-80">
+                Win exciting prizes, including cash rewards and incubation
+                support.
+              </p>
+            </div>
+          </div>
+
+          <!-- Middle Column -->
+          <div class="col-span-1 row-span-1">
+            <div class="flex flex-col gap-[1vw] h-full">
+              <div
+                class="bg-[#0E231C] p-[1.6vw] h-full flex items-end gap-[1.6vw]"
+              >
+                <img class="w-[12vw]" src="/assets/book.svg" alt="" />
+
+                <div class="w-[15vw] text-[1.2vw] flex flex-col gap-[1vw]">
+                  <h1 class="font-MadeSoulMaze">Learning</h1>
+                  <p class="opacity-80">
+                    Gain new skills, receive mentorship, and collaborate with
+                    fellow innovators.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-[#0E231C] p-[1.6vw] h-full flex items-center gap-[1.6vw]"
+              >
+                <img class="w-[12vw]" src="/assets/triangle.svg" alt="" />
+
+                <div class="w-[15vw] text-[1.2vw] flex flex-col gap-[1vw]">
+                  <h1 class="font-MadeSoulMaze">NETWORKING</h1>
+                  <p class="opacity-80">
+                    Connect with industry leaders, potential investors, and
+                    other participants.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div
+            class="bg-[#0E231C] p-[2.7vw] min-h-full flex flex-col justify-between"
+          >
+            <img class="w-[19vw]" src="/assets/celeb.png" alt="" />
+
+            <div class="w-[15vw] text-[1.2vw] flex flex-col gap-[1vw]">
+              <h1 class="font-MadeSoulMaze">NETWORKING</h1>
+              <p class="opacity-80">
+                Connect with industry leaders, potential investors, and other
+                participants.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="bg-[#0E231C] flex flex-col gap-[12vw]">
+        <div class="flex flex-col gap-[6.25vw]">
+          <div class="w-full h-[23vw] px-[5.55vw] border-b overflow-hidden">
+            <img class="w-full object-cover" src="/assets/footer.png" alt="" />
+          </div>
+
+          <div class="flex justify-center items-start gap-[3.8vw] w-full">
+            <div class="flex flex-col gap-[2.5vw] w-[44vw]">
+              <h1 class="text-[4.1vw] font-MadeSoulMaze">
+                FROM CREATIVES, FOR CREATIVES.
+              </h1>
+
+              <div class="flex gap-[6vw] text-[1.3vw]">
+                <h2 class="opacity-50 hover:opacity-100 cursor-pointer">
+                  About Us
+                </h2>
+                <h2 class="opacity-50 hover:opacity-100 cursor-pointer">
+                  Contact Us
+                </h2>
+                <h2 class="opacity-50 hover:opacity-100 cursor-pointer">
+                  FAQ’s
+                </h2>
+              </div>
+
+              <div class="flex gap-[3vw]">
+                <img src="/assets/insta.svg" class="w-[1.5vw]" alt="" />
+                <img src="/assets/facebook.svg" class="w-[1.5vw]" alt="" />
+                <img src="/assets/twitter.svg" class="w-[1.5vw]" alt="" />
+                <img src="/assets/linkedin.svg" class="w-[1.5vw]" alt="" />
+              </div>
+            </div>
+
+            <div class="p-[2vw] border h-fit flex flex-col gap-[3.8vw]">
+              <div class="flex flex-col gap-[1.5vw] text-[1.2vw] w-[32.4vw]">
+                <h1 class="font-medium leading-none">SUBSCRIBE FOR UPDATES</h1>
+                <p class="opacity-80">
+                  Subscribe to OnHack and never miss a update and notification
+                  for Buildathon
+                </p>
+              </div>
+
+              <form class="flex gap-[1vw]">
+                <input
+                  class="px-[1.3vw] py-[1vw] bg-[#FFFFFF24] w-[26.6vw] outline-none"
+                  type="text"
+                  placeholder="Enter Email Address"
+                />
+                <input
+                  type="submit"
+                  value="SUBMIT"
+                  class="bg-[#ffffff] text-black px-[1.3vw] py-[1vw]"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-between px-[5.5vw] py-[1.3vw] border-t">
+          <h2 class="opacity-50 hover:opacity-100 cursor-pointer">
+            Terms & Conditions
+          </h2>
+          <h2 class="opacity-50 hover:opacity-100 cursor-pointer">
+            ©Copyright and All rights reserved
+          </h2>
+          <h2 class="opacity-50 hover:opacity-100 cursor-pointer">
+            Privacy Policy
+          </h2>
+        </div>
+      </footer>
+    </main>
+
+    <!-- for phone screen -->
+    <main
+      class="bg-[#0E231C] h-screen w-full flex justify-center items-center text-white sm:hidden"
+    >
+      <div
+        class="flex flex-col justify-center items-center w-full bg-black p-3 bg-opacity-40"
+      >
+        <h1 class="text-2xl text-center">device not supported</h1>
+        <p class="text-sm text-center">switch to a larger screen</p>
+      </div>
+    </main>
+  </body>
+</html>
