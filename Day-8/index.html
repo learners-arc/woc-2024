@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="h-screen w-full bg-black bg-[url('https://static.vecteezy.com/system/resources/previews/001/401/677/non_2x/abstract-polygonal-shape-black-background-free-vector.jpg')] bg-cover text-white"
+  >
+    <!-- Task Input -->
+    <div class="mt-4 flex gap-8 justify-center">
+      <input
+        id="taskInput"
+        type="text"
+        placeholder="Enter Task"
+        class="w-[70%] bg-transparent px-7 outline-none border-2 border-zinc-700 rounded-md backdrop-blur-md"
+      />
+      <button 
+      onclick="addTask()"
+      class="border border-blue-600 text-blue-500 py-3 px-4 rounded-md backdrop-blur-md">
+        Add Task
+      </button>
+    </div>
+
+    <!-- Task List -->
+    <div class="w-full h-[80%] p-6">
+      <h1 class="w-full text-center text-3xl font-bold mb-4">All Tasks</h1>
+
+      <div class="w-full gap-4 text-center h-full flex">
+        <!-- To-Do Columns -->
+        <div
+          class="w-full p-4 border-2 border-blue-600 bg-black bg-opacity-20 shadow-md backdrop-blur-md rounded-md"
+          id="todo"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <h2 class="font-semibold text-2xl mb-2 text-blue-500">To-Do</h2>
+
+          <div id="todo-list" class="space-y-4"></div>
+        </div>
+
+        <!-- Progress -->
+        <div
+          class="w-full p-4 border-2 border-yellow-600 bg-black bg-opacity-20 shadow-md backdrop-blur-md rounded-md"
+          id="inprogress"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <h2 class="font-semibold text-2xl mb-2 text-yellow-500">In Progress</h2>
+          <div id="inprogress-list" class="space-y-4">
+          </div>
+        </div>
+
+        <!-- Done -->
+        <div
+          class="w-full p-4 border-2 border-green-600 bg-black bg-opacity-20 shadow-md backdrop-blur-md  rounded-md"
+          id="done"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <h2 class="font-semibold text-2xl mb-2 text-green-500">Done</h2>
+          <div id="done-list" class="space-y-4"></div>
+        </div>
+
+        <!-- BackLog -->
+        <div
+          class="w-full p-4 border-2 border-red-600 bg-black bg-opacity-20 shadow-md backdrop-blur-md  rounded-md"
+          id="backlog"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <h2 class="font-semibold text-2xl mb-2 text-red-500">Back Log</h2>
+          <div id="backlog-list" class="space-y-4"></div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
