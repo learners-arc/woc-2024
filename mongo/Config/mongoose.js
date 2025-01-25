@@ -1,14 +1,18 @@
-// const mongoose = require("mongoose");
-// const debuglog = require("debug")("development:mongooseconfig");
+const mongoose = require("mongoose");
+const debuglog = require("debug")("development:mongooseconfig");
 
-// mongoose.connect("mongodb://localhost:27017/testdata");
+mongoose.connect("mongodb://localhost:27017/testdata", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-// const db = mongoose.connection;
+const db = mongoose.connection;
 
-// db.on("error", debuglog(console, "connection error:"));
+// Log error message properly
+db.on("error", (err) => debuglog("connection error:", err));
 
-// db.on("open", function () {
-//   debuglog("Connected to MongoDB");
-// });
+db.on("open", function () {
+  debuglog("Connected to MongoDB");
+});
 
-// module.exports = db;
+module.exports = db;

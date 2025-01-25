@@ -13,30 +13,162 @@
 // const express = require("express");
 // const app = express();
 // const mongoose = require("./Config/mongoose");
-// const {userModel, validateUser} = require("./Models/user");
+// const { userModel, validateUser } = require("./Models/user");
+// const { postModel } = require("./Models/post");
 
 // app.get("/", (req, res) => {
 //   res.send("Hello, World!");
 // });
 
 //Create a data
-// app.get('/create', async (req, res, next) => {
-//     let createdUser =  await userModel.create({
-//         name: 'Divya',
-//         email: 'divya@gmail.com',
-//         password: 'divya123',
-//         age: 28
-//     })
+// app.post("/create", async (req, res, next) => {
+//   try {
+//     const createdUser = await userModel.create({
+//       name: "Rohit",
+//       email: "rohit@gmail.com",
+//       password: "rs1476r8t9563542",
+//       age: 28,
+//     });
 
-//     res.send(createdUser);
+//     res.status(201).send(createdUser); // Return the created user with a 201 status
+//   } catch (error) {
+//     // Handle error and pass it to the next middleware
+//     next(error);
+//   }
 // });
 
-//Read a data
-// app.get('/read', (req, res, next) => {
-//     let readUser =  userModel.findOne({ email: 'divya@gmail.com' })
+// app.get("/aggregations", async (req, res, next) => {
+//     try {
+//       const result = await userModel.aggregate([
+//         {
+//           $lookup: {
+//             from: "posts", 
+//             localField: "_id", 
+//             foreignField: "user", 
+//             as: "Data",
+//           },
+//         },
+//       ]);
+      
+//       res.status(200).send(result); // Send the aggregation result as response
+//     } catch (error) {
+//       next(error); // Pass any errors to the next middleware
+//     }
+//   });
 
-//     res.send(readUser);
-// })
+// // to call populated data
+// app.get("/users", async (req, res, next) => {
+//   try {
+//     const readUser = await userModel.find({ age: { $eq: 28 } }).populate('post');
+//     res.status(200).send(readUser);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
+
+//$match
+//$group
+//$lookup
+//$unwind
+//$project
+
+// Aggregation - Jab hum ek saath multiple queries perform karte hai
+
+//This is how we write aggregation queries
+// app.get("/aggregations", async (req, res, next) => {
+//     userModel.aggregate([
+//         pehla query,
+//         dusra query,
+//         tisra query
+//     ])
+// });
+
+//match
+// app.get("/aggregations", async (req, res, next) => {
+//     userModel.aggregate([{ $match: { name: "Rohit" } }])
+// });
+
+//group
+// app.get("/aggregations", async (req, res, next) => {
+//     userModel.aggregate([{ $group: { name: "Rohit", data: { $push : "$$ROOT" } } }])
+// });
+
+//lookup
+//$lookup: {
+//     from: "posts",
+//     localField: "_id",
+//     foreignField: "user",
+//     as: "post",
+//   },
+
+
+//unwind
+// app.get("/aggregations", async (req, res, next) => {
+//     userModel.aggregate([
+//         {
+//             $unwind: "$tags"
+//         }
+//     ])
+// });
+
+//project
+// app.get("/project", async (req, res, next) => {
+//   userModel.aggregate([
+//     {
+//       $project: {
+//         MeraNaam: "$name",
+//         // name: 1,
+//         age: 1,
+//       },
+//     },
+//   ]);
+// });
+
+// user{
+//     MeraNaam: "Rohit",
+//     age: 28,
+// }
+
+//create post by embedding
+// app.post("/:name/create/post", async (req, res, next) => {
+//     try {
+//       const user = await userModel.findOne({name: req.params.name});
+//       user.post.push("bgchvkbk")
+//       await user.save()
+
+//       res.status(201).send(user.post); // Return the created user with a 201 status
+//     } catch (error) {
+//       // Handle error and pass it to the next middleware
+//       next(error);
+//     }
+//   });
+
+//create post by reference
+// app.post("/:name/create/post", async (req, res, next) => {
+//     try {
+//       const user = await userModel.findOne({name: req.params.name});
+//       const post = await postModel.create({
+//         title: "Post 1",
+//         content: "This is the content of post 1",
+//         user: user._id,
+//       });
+
+//       user.post.push(post._id)
+//       await user.save()
+
+//       res.status(201).send(user.post); // Return the created user with a 201 status
+//     } catch (error) {
+//       // Handle error and pass it to the next middleware
+//       next(error);
+//     }
+//   });
+
+//Read a data
+// app.get("/read", async (req, res, next) => {
+//   let readUser = await userModel.findOne({ email: "divya@gmail.com" });
+
+//   res.send(readUser);
+// });
 
 //Update a data
 // app.get('/update', (req, res, next) => {
@@ -113,7 +245,6 @@
 //     let readUser = userModel.find({ age: { $ne: 28 } });
 //   });
 
-
 // app.get("/nonvoter", (req, res, next) => {
 //     let readUser = userModel.find({ age: { $lt: 18 } });
 //   });
@@ -135,7 +266,6 @@
 //     let readUser = userModel.find({ age: { $and: [{name: {$gt: 25}}, {age: {$lt: 40}}] } });
 //   });
 
-
 //regex
 
 // ^ - start with
@@ -155,8 +285,6 @@
 //     res.send("User created");
 //   });
 
-
-
-// app.listen(3000, () => {
-//   console.log("Server is running on port 3000");
-// });
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
