@@ -15,6 +15,8 @@ const Second = () => {
     const handleClick = () => {
         setButtonVisibility(!buttonVisibility)
     }
+
+    const h1 = document.createElement('hgvhjv').innerHTML
     
   return (
     <div className="w-full h-[50vh] bg-yellow-700">
@@ -24,6 +26,7 @@ const Second = () => {
           odit, accusantium est delectus fugiat maiores officiis non, in
           nesciunt voluptatem esse eaque beatae necessitatibus! Praesentium,
           voluptate? Repudiandae commodi est dignissimos!
+
         </p>
 
         <h1 className="text-[4vw] w-full text-center">{var1}</h1>
